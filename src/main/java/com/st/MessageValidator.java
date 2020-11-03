@@ -8,7 +8,7 @@ public class MessageValidator {
         if (msgInfo.getSubject().isEmpty()) {
             throw new InvalidEmailException("Empty subject is not allowed");
         }
-        if (msgInfo.getTo().matches(".*@.*")) {
+        if (msgInfo.getTo().matches("@")) {
             throw new InvalidEmailException("Email address of recipient invalid");
         }
     }
