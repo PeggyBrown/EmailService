@@ -7,10 +7,10 @@ import java.util.Properties;
 
 public class EmailSender {
 
-    private MessageBuilder messageBuilder;
-    private PropertiesLoader propertiesLoader;
-    private MessageValidator messageValidator;
-    private Transporter transporter;
+    private final MessageBuilder messageBuilder;
+    private final PropertiesLoader propertiesLoader;
+    private final MessageValidator messageValidator;
+    private final Transporter transporter;
 
     public EmailSender(MessageBuilder messageBuilder,
                        PropertiesLoader propertiesLoader,
@@ -22,7 +22,6 @@ public class EmailSender {
         this.messageValidator = messageValidator;
         this.transporter = transporter;
     }
-
 
     void sendEmail(String to, String subject, String content) {
         Properties prop = propertiesLoader.loadProperties();

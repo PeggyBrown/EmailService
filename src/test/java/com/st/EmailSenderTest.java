@@ -76,15 +76,15 @@ class EmailSenderTest {
     }
 
     @Test
-    void shouldNotSendEmailWhenAddressIncorrect() throws MessagingException {
+    void shouldNotSendEmailWhenAddressIncorrect() {
         //given
         doThrow(InvalidEmailException.class).when(messageValidator).validateMessage(any(MsgInfo.class));
         when(propertiesLoader.loadProperties()).thenReturn(properties);
 
         //then
-        assertThatExceptionOfType(InvalidEmailException.class).isThrownBy( () -> {
-                    sender.sendEmail(toEmail, subject, text);
-                });
+        assertThatExceptionOfType(InvalidEmailException.class).isThrownBy(() -> {
+            sender.sendEmail(toEmail, subject, text);
+        });
     }
 
     private MimeMessage prepareMessage() throws MessagingException {
