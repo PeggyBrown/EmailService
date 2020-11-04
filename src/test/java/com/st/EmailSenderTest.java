@@ -23,8 +23,8 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 class EmailSenderTest {
 
-    String fromEmail = "fromEmail";
-    String toEmail = "toEmail";
+    String fromEmail = "from@email.com";
+    String toEmail = "to@email.com";
     String subject = "Subject";
     String text = "Text";
 
